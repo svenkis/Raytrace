@@ -13,8 +13,7 @@ int main() {
     // Show a nice message in the Terminal window
     cout << "Hello, World!" << endl;
 
-    // This lets the operating system (Windows, Mac, Linux, etc.) know that the program
-    // did not encounter any errors
+    std::cout << "Hellohellohello!" << std::endl;
     return 0;
 }
 
