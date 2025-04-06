@@ -1,21 +1,28 @@
-//
-// This is example code from Chapter 2.2 "The classic first program" of
-// "Programming -- Principles and Practice Using C++" by Bjarne Stroustrup
-//
-// This program outputs the message "Hello, World!" to the monitor
 
 #include "std_lib_facilities.h"
+#include "RayTracingSimulationWindow.h"
 
-//------------------------------------------------------------------------------'
-
-// C++ programs start by executing the function main
 int main() {
-    // Show a nice message in the Terminal window
-    cout << "TEST" << endl;
+    
 
-    // This lets the operating system (Windows, Mac, Linux, etc.) know that the program
-    // did not encounter any errors
+    RayTracingSimulationWindow window;
+    window.setBackgroundColor(TDT4102::Color::black);
+
+    //circle
+    int radius = 25;
+    TDT4102::Color circleColor = TDT4102::Color::white;
+
+    while(!window.should_close()) {
+        TDT4102::Point mouseCoordinates = window.get_mouse_coordinates();
+
+        if (window.is_left_mouse_button_down() != false){
+        window.draw_circle(mouseCoordinates,radius,circleColor);
+        }
+
+        
+
+        window.next_frame();
+    }
+
     return 0;
 }
-
-//------------------------------------------------------------------------------
