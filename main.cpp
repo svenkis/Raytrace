@@ -15,9 +15,9 @@ int main() {
     while(!window.should_close()) {
         TDT4102::Point mouseCoordinates = window.get_mouse_coordinates();
 
-        if (window.is_left_mouse_button_down() != false){
+        //if (window.is_left_mouse_button_down() != false){
         window.draw_circle(mouseCoordinates,radius,circleColor);
-        }
+        //}
 
         
 
