@@ -39,5 +39,7 @@ TDT4102::Point RayTracingSimulationWindow::calculateRayEndPoint(TDT4102::Point r
 void RayTracingSimulationWindow::drawRay(TDT4102::Point rayStart, TDT4102::Point rayEnd, double angle, TDT4102::Color rayColor){
 //bruker draw_line, men med beregnet end.
 
+    //test
+
 }
 
