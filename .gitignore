@@ -1,4 +1,4 @@
 builddir/
 .vscode/
 subprojects/
-meson.build/
+meson.build
