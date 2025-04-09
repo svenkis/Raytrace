@@ -1,4 +1,5 @@
 #include "RayTracingSimulationWindow.h"
+#include "GUI.h"
 
 RayTracingSimulationWindow::RayTracingSimulationWindow(int x, int y, int width, int height, const std::string& title) : AnimationWindow(x, y, width, height, title) {}
 
@@ -16,7 +17,7 @@ bool RayTracingSimulationWindow::collisionCircle(TDT4102::Point rayPoint, TDT410
 }
 
 //Checks whether the next calculated point will hit the window edges
-bool collisionEdgeOfWindow(TDT4102::Point rayPoint, RayTracingSimulationWindow window){
+bool RayTracingSimulationWindow::collisionEdgeOfWindow(TDT4102::Point rayPoint, RayTracingSimulationWindow window){
     if(rayPoint.x < 0 || rayPoint.x > window.width()){
         return true;
     }

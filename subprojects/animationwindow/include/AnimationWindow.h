@@ -24,7 +24,7 @@ class Widget;
 namespace internal {
 // These variables set the rate at which this window should draw frames.
 
-static const double activeFramesPerSecond = 60.0;
+static const double activeFramesPerSecond = 120.0;
 static const double activeSecondsPerFrame = 1.0 / activeFramesPerSecond;
 
 static const double idleFramesPerSecond = 15.0;

@@ -6,11 +6,13 @@ class RayTracingSimulationWindow : public AnimationWindow {
     private:
     TDT4102::Point rayStart;
     TDT4102::Point rayEnd;
-    TDT4102::Color rayColor;
 
     double angle;
         
     public:
+
+    TDT4102::Color rayColor; // gjorde denne public
+
     RayTracingSimulationWindow(int x = 50, int y = 50, int width = 1600, int height = 900, const std::string& title = "RayTracing Simulation Window");
 
     bool collisionCircle(TDT4102::Point rayPoint, TDT4102::Point circleOrigin, double circleRadius);
