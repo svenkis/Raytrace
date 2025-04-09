@@ -9,6 +9,7 @@ class RayTracingSimulationWindow : public AnimationWindow {
     std::vector<Circle> circles;
     std::vector<Ray> rays;
     
+    static const double activeFramesPerSecond = 120.0;
        
     public:
     RayTracingSimulationWindow(int x = 50, int y = 50, int width = 1000, int height = 1000, const std::string& title = "RayTracing Simulation Window");

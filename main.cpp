@@ -11,7 +11,7 @@ int main() {
     //light
     int radius = 5;
     TDT4102::Color circleColor = TDT4102::Color::white;
-    int numRays = 500;
+    int numRays =1000;
 
 
     TDT4102::Point origin1;
