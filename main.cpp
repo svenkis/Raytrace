@@ -1,12 +1,18 @@
 
 #include "std_lib_facilities.h"
 #include "RayTracingSimulationWindow.h"
+#include "GUI.h"
+
 
 int main() {
     
 
     RayTracingSimulationWindow window;
-    window.setBackgroundColor(TDT4102::Color::black);
+    window.setBackgroundColor(TDT4102::Color::dark_gray);
+
+    //GUI
+
+    GUI gui(window);
 
     //light
     int radius = 5;
@@ -28,12 +34,11 @@ int main() {
     while(!window.should_close()) {
         TDT4102::Point mouseCoordinates = window.get_mouse_coordinates();
 
+        window.fillRays(mouseCoordinates,window.rayColor,numRays);
         
         window.draw_circle(mouseCoordinates,radius,circleColor);
         window.draw_circle(origin1,100,circleColor);
         window.draw_circle(origin2,100,circleColor);
-
-        window.fillRays(mouseCoordinates,circleColor,numRays);
         
 
         

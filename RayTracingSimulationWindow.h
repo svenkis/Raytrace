@@ -8,10 +8,11 @@ class RayTracingSimulationWindow : public AnimationWindow {
     private:
     std::vector<Circle> circles;
     std::vector<Ray> rays;
-    
-    static const double activeFramesPerSecond = 120.0;
        
     public:
+
+    TDT4102::Color rayColor;
+
     RayTracingSimulationWindow(int x = 50, int y = 50, int width = 1000, int height = 1000, const std::string& title = "RayTracing Simulation Window");
 
     void addCircle(const TDT4102::Point& origin, double radius);
