@@ -16,10 +16,3 @@ struct LineSegment {
 
     LineSegment(const TDT4102::Point& start, const TDT4102::Point& end) : start(start), end(end){}
 };
-
-struct Ray {
-    TDT4102::Point start;
-    TDT4102::Point end;
-
-    double angle;
-};
