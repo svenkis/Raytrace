@@ -32,7 +32,11 @@ Step 4: Compile and Run
 About the program:
 
 The program is a simple RayTracing simulator in two dimensions. This program does not feature reflections, but it does stop rays when hitting objects. There are two types of objects implemented in this program: lines and circles. These two types of objects can be used as building blocks to draw different figures that will stop rays.
+
 From the mouse cursors coordinates, it iteratively draws rays out in 360 degrees. For each iteration, it checks for collision with objects. The objects are stored in a vector of the objects type. The object type contains variables which constitute the objects geometry. 
+
 For circles, if the ray is closer to the circle origin than the radius, it must have hit the circle circumference and therefore that point is the collision point and returned.
+
 For line segments, we use the general formula ax+bx+c=0, and look at an infinite line. Then we make sure that the ray crosses the infinite line between the two endpoints of a line segment on that infinite line. We also use a thickness for the line segment, this is because when iterating, from one to the next, the iteration can “jump” over the line and therefore we need to have sufficient threshold to make sure the ray “collides” with the line. Finally, we check for all conditions, and then return the collision point if it has satisfied the conditions.
+
 For the GUI, the user can choose ray color and number of rays. The color is changed through updating a variable, while the number of rays are changed by using a member function to update a variable in main.
