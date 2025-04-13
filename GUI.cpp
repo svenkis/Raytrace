@@ -8,9 +8,9 @@ GUI::GUI(RayTracingSimulationWindow& simulationWindow)
 {
     simWindow.add(colorDropdown);
     colorDropdown.setCallback(std::bind(&GUI::colorChanged, this));
-    int sliderMin = 5;
+    int sliderMin = 1;
     int sliderMax = 500;
-    radiusSlider = new TDT4102::Slider(TDT4102::Point{50, 100}, 200, 30, 5, 100, 25, 1);
+    radiusSlider = new TDT4102::Slider(TDT4102::Point{50, 100}, 200, 30, 1, 500, 25, 1);
     simWindow.add(*radiusSlider);
 }
 

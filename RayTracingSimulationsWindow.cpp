@@ -15,15 +15,15 @@ TDT4102::Point RayTracingSimulationWindow::traceRay(TDT4102::Point rayStart, dou
     double y = rayStart.y;
     
 
-    double stepSize = 10.0;
+    double stepSize = 1.0;
     double dx = stepSize*cos(angle);
     double dy = stepSize*sin(angle);
 
-    int maxIter = 10000;
+    int maxIter = 5000;
     int iter = 0;
 
     //Using a thickness for a treshold for the lines. This is needed because the step size can "jump" over the line an not calculating collison.
-    const double lineThickness = 7.0;
+    const double lineThickness = 1.0;
 
     while(iter<maxIter){
         for(const Circle& circle : circles){
