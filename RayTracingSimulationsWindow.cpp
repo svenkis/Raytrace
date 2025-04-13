@@ -11,7 +11,8 @@ void RayTracingSimulationWindow::addLineSegment(const TDT4102::Point& start, TDT
 }
 
 TDT4102::Point RayTracingSimulationWindow::traceRay(TDT4102::Point rayStart, double angle){
-    TDT4102::Point currentPoint = rayStart;
+    double x = rayStart.x;
+    double y = rayStart.y;
     
 
     double stepSize = 10.0;
@@ -26,16 +27,16 @@ TDT4102::Point RayTracingSimulationWindow::traceRay(TDT4102::Point rayStart, dou
 
     while(iter<maxIter){
         for(const Circle& circle : circles){
-            double dX = currentPoint.x - circle.origin.x;
-            double dY = currentPoint.y - circle.origin.y;
+            double dX = x - circle.origin.x;
+            double dY = y - circle.origin.y;
             double distanceSquared = dX*dX + dY*dY;
 
             if(distanceSquared <= circle.radius*circle.radius){
-                return currentPoint;
+                return TDT4102::Point{static_cast<int>(x), static_cast<int>(y)};
             }
         }
 
-        if(currentPoint.x <0 || currentPoint.x > width() || currentPoint.y <0 || currentPoint.y > height()){
+        if(x <0 || x > width() || y <0 || y > height()){
             break;
         }
 
@@ -48,26 +49,27 @@ TDT4102::Point RayTracingSimulationWindow::traceRay(TDT4102::Point rayStart, dou
         double c = lineSegment.end.x *lineSegment.start.y -lineSegment.start.x * lineSegment.end.y;
 
         double length = sqrt(a*a + b*b);
-        double distance = fabs(a* currentPoint.x + b* currentPoint.y +c) / length;
+        double distance = fabs(a* x + b* y +c) / length;
 
         double kx = lineSegment.end.x - lineSegment.start.x;
         double ky = lineSegment.end.y - lineSegment.start.y;
         
         double lengthSquared = kx*kx + ky*ky;
-        double t = ((currentPoint.x -lineSegment.start.x) *kx + (currentPoint.y -lineSegment.start.y) *ky ) /lengthSquared;
+        double t = ((x -lineSegment.start.x) *kx + (y -lineSegment.start.y) *ky ) /lengthSquared;
 
         if(t>= 0 && t <= 1 && distance < lineThickness){
-            return currentPoint;
+            return TDT4102::Point{static_cast<int>(x), static_cast<int>(y)};
         }
 
         }
 
-        currentPoint.x = static_cast<int>(currentPoint.x+dx);
-        currentPoint.y = static_cast<int>(currentPoint.y+dy);
+
+        x += dx;
+        y += dy;
         iter++;
     } 
 
-    return currentPoint;
+    return TDT4102::Point{static_cast<int>(x), static_cast<int>(y)};
 
 }
 
